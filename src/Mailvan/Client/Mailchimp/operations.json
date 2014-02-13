@@ -1,0 +1,89 @@
+{
+    "name": "MailChimp",
+    "version": "2.0",
+    "operations": {
+        "getLists": {
+            "httpMethod": "POST",
+            "uri": "lists/list.json",
+            "summary": "Retrieves list of subscription lists",
+            "parameters": {
+                "api_key": {
+                    "location": "json",
+                    "required": true
+                }
+            },
+            "additionalParameters": {
+                "location": "json"
+            }
+        },
+        "subscribe": {
+            "httpMethod": "POST",
+            "uri": "/lists/subscribe.json",
+            "summary": "Subscribes user to list",
+            "parameters": {
+                "api_key": {
+                    "location": "json",
+                    "required": true
+                },
+                "id": {
+                    "location": "json",
+                    "reqired": true
+                },
+                "email": {
+                    "location": "json",
+                    "required": true
+                },
+                "update_existing": {
+                    "location": "json",
+                    "required": false,
+                    "default": true
+                },
+                "double_optin": {
+                    "location": "json",
+                    "required": false,
+                    "default": true
+                }
+            },
+            "additionalParameters": {
+                "location": "json"
+            }
+        },
+        "unsubscribe": {
+            "httpMethod": "POST",
+            "uri": "/lists/unsubscribe.json",
+            "summary": "Unsubscribes user from given list."
+            "parameters": {
+                "api_key": {
+                    "location": "json",
+                    "required": true
+                },
+                "id": {
+                    "location": "json",
+                    "reqired": true
+                },
+                "email": {
+                    "location": "json",
+                    "required": true
+                },
+                "delete_member": {
+                    "location": "json",
+                    "required": false,
+                    "default": false,
+                    "type": "boolean"
+                },
+                "send_goodbye": {
+                    "location": "json",
+                    "required": false,
+                    "default": true,
+                    "type": "boolean"
+                },
+                "send_notify": {
+                    "location": "json",
+                    "required": false,
+                    "default": true,
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
