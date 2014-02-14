@@ -17,11 +17,11 @@ class Client extends BaseClient
      * @param array $config
      * @return \Guzzle\Service\Client|void
      */
-    public static function factory($config = array())
+    public static function factory($config = [])
     {
-        $required_params = array('base_url', 'api_key');
+        $required_params = ['base_url', 'api_key'];
 
-        $config = Collection::fromConfig($config, array(), $required_params);
+        $config = Collection::fromConfig($config, [], $required_params);
 
         $api_key = $config->get('api_key');
         $dc = substr($api_key, strrpos($api_key, '-')+1);
@@ -63,15 +63,11 @@ class Client extends BaseClient
      */
     public function subscribe(UserInterface $user, SubscriptionListInterface $list)
     {
-        $params = array(
-            'email' => array('email' => $user->getEmail()),
+        $params = [
+            'email' => ['email' => $user->getEmail()],
             'id' => $list->getId(),
-            'merge_vars' => array(
-                'FNAME' => $user->getFirstName(),
-                'LNAME' => $user->getLastName(),
-                'OPTIN_TIME' => gmdate('Y-m-d H:i:s'),
-            )
-        );
+            'merge_vars' => [ 'FNAME' => $user->getFirstName(), 'LNAME' => $user->getLastName(), 'OPTIN_TIME' => gmdate('Y-m-d H:i:s') ]
+        ];
 
         return $this->doExecuteCommand('subscribe', $params, function() {
             return true;
@@ -89,7 +85,7 @@ class Client extends BaseClient
     {
         return $this->doExecuteCommand(
             'unsubscribe',
-            array('id' => $list->getId(), 'email' => array('email' => $user->getEmail())),
+            ['id' => $list->getId(), 'email' => array('email' => $user->getEmail())],
             function($response) {
                 return $response['complete'];
             }
@@ -116,7 +112,7 @@ class Client extends BaseClient
      */
     public function getLists()
     {
-        return $this->doExecuteCommand('getLists', array(), function($response) {
+        return $this->doExecuteCommand('getLists', [], function($response) {
             return array_map(
                 function($item) {
                     return $this->createSubscriptionList($item['id']);

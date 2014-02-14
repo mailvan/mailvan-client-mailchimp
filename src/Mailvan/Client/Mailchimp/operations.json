@@ -51,7 +51,7 @@
         "unsubscribe": {
             "httpMethod": "POST",
             "uri": "/lists/unsubscribe.json",
-            "summary": "Unsubscribes user from given list."
+            "summary": "Unsubscribes user from given list.",
             "parameters": {
                 "api_key": {
                     "location": "json",
