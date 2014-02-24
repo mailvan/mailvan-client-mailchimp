@@ -34,26 +34,6 @@ class Client extends BaseClient
     }
 
     /**
-     * @param $command
-     * @param $params
-     * @param callable $responseParser
-     * @return mixed
-     * @throws MailchimpException
-     */
-    private function doExecuteCommand($command, $params, \Closure $responseParser)
-    {
-        $params['api_key'] = $this->getConfig('api_key');
-
-        $response = $this->getCommand($command, $params)->getResult();
-        if (empty($response['status']) || $response['status'] != 'error') {
-            return $responseParser($response);
-        }
-
-        throw new MailchimpException($response['error'], $response['code']);
-    }
-
-
-    /**
      * Subscribes given user to given SubscriptionList. Returns true if operation is successful
      *
      * @param UserInterface $user
@@ -120,5 +100,33 @@ class Client extends BaseClient
                 $response['data']
             );
         });
+    }
+
+    /**
+     * @param $params
+     * @return mixed
+     */
+    protected function mergeApiKey($params)
+    {
+        $params['api_key'] = $this->getConfig('api_key');
+        return $params;
+    }
+
+    /**
+     * @param $response
+     * @return bool
+     */
+    protected function hasError($response)
+    {
+        return isset($response['status']) && $response['status'] == 'error';
+    }
+
+    /**
+     * @param $response
+     * @return MailchimpException
+     */
+    protected function raiseError($response)
+    {
+        return new MailchimpException($response['error'], $response['code']);
     }
 }

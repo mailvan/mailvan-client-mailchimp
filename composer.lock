@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mailvan/mailvan-core.git",
-                "reference": "ae42af9479ecf349f8b4cf3abc6a40f5f8dfa7d7"
+                "reference": "9354d2b5991e338cfedb51470dcabd094fb5c1af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mailvan/mailvan-core/zipball/ae42af9479ecf349f8b4cf3abc6a40f5f8dfa7d7",
-                "reference": "ae42af9479ecf349f8b4cf3abc6a40f5f8dfa7d7",
+                "url": "https://api.github.com/repos/mailvan/mailvan-core/zipball/9354d2b5991e338cfedb51470dcabd094fb5c1af",
+                "reference": "9354d2b5991e338cfedb51470dcabd094fb5c1af",
                 "shasum": ""
             },
             "require": {
@@ -152,21 +152,21 @@
                 "source": "https://github.com/mailvan/mailvan-core/tree/master",
                 "issues": "https://github.com/mailvan/mailvan-core/issues"
             },
-            "time": "2014-01-30 18:15:19"
+            "time": "2014-02-24 08:15:28"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601"
+                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e3ba42f6a70554ed05749e61b829550f6ac33601",
-                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/4708b8cd41984a5ba29fe7dd40716f7f761ac501",
+                "reference": "4708b8cd41984a5ba29fe7dd40716f7f761ac501",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-28 08:12:03"
+            "time": "2014-02-11 13:52:09"
         }
     ],
     "packages-dev": [
@@ -581,17 +581,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "4e1a237fc48145fae114b96458d799746ad89aa0"
+                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4e1a237fc48145fae114b96458d799746ad89aa0",
-                "reference": "4e1a237fc48145fae114b96458d799746ad89aa0",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
+                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
                 "shasum": ""
             },
             "require": {
@@ -615,7 +615,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -624,7 +626,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-28 08:12:03"
+            "time": "2014-01-07 13:28:54"
         }
     ],
     "aliases": [

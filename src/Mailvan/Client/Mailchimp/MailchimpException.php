@@ -4,7 +4,9 @@
 namespace Mailvan\Client\Mailchimp;
 
 
-class MailchimpException extends \RuntimeException
+use Mailvan\Core\MailvanException;
+
+class MailchimpException extends MailvanException
 {
 
 } 
